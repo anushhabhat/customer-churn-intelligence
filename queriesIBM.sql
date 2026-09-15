@@ -116,7 +116,7 @@ WHERE quartile = 4   -- top 25% (above 75th percentile)
   AND churn = 'Yes'
 ORDER BY monthlycharges DESC;
 
--- 4.2 Revenue concentration — top 20% customers contribute what % of revenue?
+-- Revenue concentration — top 20% customers contribute what % of revenue?
 WITH ranked AS (
     SELECT
         customerid,
@@ -166,7 +166,7 @@ GROUP BY contract,tenure_bucket
 ORDER BY contract,MIN(tenure);
 
 
--- 5.2 Monthly revenue retained vs lost per tenure cohort
+-- Monthly revenue retained vs lost per tenure cohort
 SELECT
     CASE
         WHEN CAST(tenure AS INTEGER) BETWEEN 0  AND 12 THEN '0–12 months'
